@@ -25,7 +25,7 @@ if __name__ == '__main__':
     print(arguments)
 
     po = pushover.Pushover(arguments['--token'])
-    po.user(arguments['--user'], arguments['--device'])
+    po.set_user(arguments['--user'], arguments['--device'])
     msgid, msg = po.msg(arguments['<message>'])
 
     msg.set('title', arguments['--title'])

@@ -32,7 +32,7 @@ class PushoverMessage:
         """
         return self.vars
 
-    def user(self, user_token, user_device=None):
+    def set_user(self, user_token, user_device=None):
         """
         Sets a single user to be the recipient of this message with token "user_token" and device "user_device".
         """
@@ -49,7 +49,7 @@ class Pushover:
     Usage:
 
         po = Pushover("My App Token")
-        po.user("My User Token", "My User Device Name")
+        po.set_user("My User Token", "My User Device Name")
 
         msg = po.msg("Hello, World!")
 
@@ -103,7 +103,7 @@ class Pushover:
             response.append(self._send(message))
         return response
 
-    def user(self, user_token, user_device=None):
+    def set_user(self, user_token, user_device=None):
         """
         Sets a single user to be the recipient of all messages created with this Pushover object.
         """

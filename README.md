@@ -10,7 +10,7 @@ Sample Python3 Usage:
 from pushover import Pushover
 
 po = Pushover("My App Token")
-po.user("My User Token")
+po.set_user("My User Token")
 
 msg = po.msg("Hello, World!")
 

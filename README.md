@@ -1,10 +1,10 @@
-A simple Python3.3 client for http://pushover.net/ API based off of https://github.com/pix0r/pushover by pix0r.
+A simple Python 3 client for http://pushover.net/ API based off of https://github.com/pix0r/pushover by pix0r.
 
 Install:
 
-    pip install https://github.com/Wyattjoh/pushover
+    pip install https://github.com/RazerM/pushover/archive/v0.2.zip
 
-Sample Python3 Usage:
+Sample Python 3 usage:
 
 ```python
 from pushover import Pushover
@@ -19,7 +19,7 @@ msg.set("title", "Best title ever!!!")
 po.send(msg)
 ```
 
-Sample Shell Usage:
+Sample shell usage:
 
 ```bash
 ./pushover "Hello, World!" --token="My App Token" --user="My User Token"

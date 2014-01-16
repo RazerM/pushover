@@ -130,7 +130,7 @@ class Pushover:
         assert self.token is not None
 
         if not 'user' in kwargs:
-            if self.user is not None:
+            if self.set_user is not None:
                 kwargs['user'] = self.user_token
                 if self.user_device is not None:
                     kwargs['device'] = self.user_device

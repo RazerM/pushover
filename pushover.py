@@ -5,7 +5,10 @@ from urllib.parse import urlencode
 import json
 import os
 
-class PushoverError(Exception): pass
+
+class PushoverError(Exception):
+    pass
+
 
 class PushoverMessage:
     """
@@ -34,13 +37,15 @@ class PushoverMessage:
 
     def set_user(self, user_token, user_device=None):
         """
-        Sets a single user to be the recipient of this message with token "user_token" and device "user_device".
+        Sets a single user to be the recipient of this message with token
+        "user_token" and device "user_device".
         """
         self.set('user', user_token)
         self.set('device', user_device)
 
     def __str__(self):
         return "PushoverMessage: " + str(self.vars)
+
 
 class Pushover:
     """
@@ -59,7 +64,7 @@ class Pushover:
 
     PUSHOVER_SERVER = "api.pushover.net:443"
     PUSHOVER_ENDPOINT = "/1/messages.json"
-    PUSHOVER_CONTENT_TYPE = { "Content-type": "application/x-www-form-urlencoded"}
+    PUSHOVER_CONTENT_TYPE = {"Content-type": "application/x-www-form-urlencoded"}
 
     def __init__(self, token=None):
         """
@@ -76,7 +81,8 @@ class Pushover:
 
     def msg(self, message):
         """
-        Creates a PushoverMessage object. Takes one "message" parameter (the message to be sent).
+        Creates a PushoverMessage object. Takes one "message" parameter (the
+        message to be sent).
         Returns with PushoverMessage object (msg).
         """
 
@@ -105,7 +111,8 @@ class Pushover:
 
     def set_user(self, user_token, user_device=None):
         """
-        Sets a single user to be the recipient of all messages created with this Pushover object.
+        Sets a single user to be the recipient of all messages created with
+        this Pushover object.
         """
 
         self.user_token = user_token
@@ -132,7 +139,8 @@ class Pushover:
 
         data = urlencode(kwargs)
         conn = HTTPSConnection(Pushover.PUSHOVER_SERVER)
-        conn.request("POST", Pushover.PUSHOVER_ENDPOINT, data, Pushover.PUSHOVER_CONTENT_TYPE)
+        conn.request("POST", Pushover.PUSHOVER_ENDPOINT, data,
+                     Pushover.PUSHOVER_CONTENT_TYPE)
         output = conn.getresponse().read().decode('utf-8')
         data = json.loads(output)
 

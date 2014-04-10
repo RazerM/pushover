@@ -26,10 +26,10 @@ if __name__ == '__main__':
 
     po = pushover.Pushover(arguments['--token'])
     po.set_user(arguments['--user'], arguments['--device'])
-    msgid, msg = po.msg(arguments['<message>'])
+    msg = po.msg(arguments['<message>'])
 
     msg.set('title', arguments['--title'])
     msg.set('timestamp', arguments['--timestamp'])
     msg.set('priority', arguments['--priority'])
 
-    po.send(msgid)
+    po.send(msg)

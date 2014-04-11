@@ -2,7 +2,7 @@ A simple Python 3 client for http://pushover.net/ API based off of https://githu
 
 Install:
 
-    pip install https://github.com/RazerM/pushover/archive/v0.2.1.zip
+    pip install https://github.com/RazerM/pushover/archive/v0.2.2.zip
 
 Sample Python 3 usage:
 
